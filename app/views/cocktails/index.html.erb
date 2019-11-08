@@ -1,5 +1,8 @@
 <% @cocktails.each do |cocktail| %>
   <h2><%= link_to(cocktail.name, cocktail_path(cocktail))%></h2>
+  <!-- app/views/articles/index.html.erb -->
+<%= cl_image_tag("jzhljnk4aftcoh5jdnop",
+      width: 400, height: 300, crop: :fill) %>
 <% end %>
 
 <%= link_to("NEW",new_cocktail_path)  %>
