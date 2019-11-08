@@ -1,5 +1,8 @@
 class CocktailsController < ApplicationController
   before_action :find_cocktail, only: [:show]
+
+  mount_uploader :photo, PhotoUploader
+
   def index
     @cocktails = Cocktail.all
   end
@@ -20,7 +23,7 @@ class CocktailsController < ApplicationController
   private
 
   def user_params
-    params.require(:cocktail).permit(:name)
+    params.require(:cocktail).permit(:name, :photo)
   end
 
   def find_cocktail
